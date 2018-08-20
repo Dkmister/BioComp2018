@@ -43,13 +43,17 @@ def reverse_string(s):
 	return s[::-1]
 
 def substring_palindrome(l, crom):
+	d = {}
 	substr = []
 	temp_str =""
 	for line in crom:
 		for i in range(0,len(line) - l):
-			temp_str += line[i:i+l]
+			temp_str = line[i:i+l]
 			substr.append(''.join(temp_str))
-	return substr
+	for lin in substr:
+		if is_palindrome(lin) == True:
+			d[lin] = d.get(lin,0) + 1
+	return d
 
 cromossome7 = init_file("sequence.fasta")
 #questao a:
