@@ -44,9 +44,11 @@ def reverse_string(s):
 
 def substring_palindrome(l, crom):
 	substr = []
+	temp_str =""
 	for line in crom:
 		for i in range(0,len(line) - l):
-			substr += line[i:i+l]
+			temp_str += line[i:i+l]
+			substr.append(''.join(temp_str))
 	return substr
 
 cromossome7 = init_file("sequence.fasta")
