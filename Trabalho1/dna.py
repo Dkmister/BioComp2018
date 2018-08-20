@@ -1,3 +1,21 @@
+
+def create_dic_nucleotid():
+	dic_nuc = {'A':0,'C':0,'T':0,'G':0,'N':0}
+	return dic_nuc
+
+def count_nucleotid(char,dic):
+	if char == 'A':
+		dic['A'] = dic['A'] + 1
+	elif char == 'C':
+		dic['C'] = dic['C'] + 1
+	elif char == 'G':
+		dic['G'] = dic['G'] + 1
+	elif char == 'T':
+		dic['T'] = dic['T'] + 1
+	else:
+		dic['N'] = dic['N'] + 1
+	return dic
+
 def create_nucleotid_UFRGS(number):
 	if number == '0' or number == '7' or number == '8' :
 		return 'A'
@@ -10,6 +28,11 @@ def create_nucleotid_UFRGS(number):
 	else:
 		return None
 
+def sequence_nucleotid_UFRGS(matricula):
+	sequence_nucleotid = ""
+	for char in matricula:
+		sequence_nucleotid += create_nucleotid_UFRGS(char)
+	return sequence_nucleotid
 
 def complementary_nucleotid(char):
 	if char == 'T':
@@ -21,7 +44,21 @@ def complementary_nucleotid(char):
 	elif char == 'G':
 		return 'C'
 	else:
-		return None
+		return ''
+
+def create_different_sequences_E(sequence):
+	lst_diff_seq = []
+	tmp_c = ""
+	diff_nucs = change_all_nucleotids(sequence[4])
+	for n in diff_nucs:
+		tmp_dna = list(sequence)
+		tmp_dna[4] = n
+		lst_diff_seq.append(''.join(tmp_dna))
+	for char in sequence:
+		tmp_c += complementary_nucleotid(char)
+	lst_diff_seq.append(tmp_c)
+	lst_diff_seq.append(sequence)
+	return (lst_diff_seq)
 
 def change_all_nucleotids(char):
 	if char == 'T':
@@ -41,6 +78,6 @@ def create_all_possible_mutations(dna):
 		for j in range(0,len(others_mutations)):
 			sub_dna = list(dna)
 			(sub_dna[i]) = (others_mutations[j])
-			total_mutations.append(''.join(sub_dna))			
+			total_mutations.append(''.join(sub_dna))
 	return (total_mutations)
 
