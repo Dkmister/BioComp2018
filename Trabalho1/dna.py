@@ -34,6 +34,14 @@ def sequence_nucleotid_UFRGS(matricula):
 		sequence_nucleotid += create_nucleotid_UFRGS(char)
 	return sequence_nucleotid
 
+def complementary_sequence(word):
+	comp_seq = ""
+	for char in word:
+		comp_seq += complementary_nucleotid(char)
+	return comp_seq
+
+
+
 def complementary_nucleotid(char):
 	if char == 'T':
 		return 'A'

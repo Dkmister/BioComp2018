@@ -33,16 +33,26 @@ def calculate_nucleotids(crom):
 			dic_nuc[char] = dic_nuc.get(char,0) + 1
 	return dic_nuc
 
+def is_palindrome(seq):
+	if seq == reverse_string(complementary_sequence(seq)):
+		return True
+	else:
+		return False
 
+def reverse_string(s):
+	return s[::-1]
 
 cromossome7 = init_file("sequence.fasta")
 #questao a:
 #locate_diabetes(cromossome7,"CAGGAGATCTTCGTGGCCAC")
-#questao d
+#questao b:
+#print(is_palindrome("GC"))
+#print(is_palindrome("ATATG"))
+#questao d:
 #qt_nuc = calculate_nucleotids(cromossome7)
 #print(qt_nuc)
-#questao e
-seq = sequence_nucleotid_UFRGS("00242276")
-lst_s = create_different_sequences_E(seq)
-d = analyse_dna_seq(lst_s,cromossome7)
-print(d)
+#questao e:
+#seq = sequence_nucleotid_UFRGS("00242276")
+#lst_s = create_different_sequences_E(seq)
+#d = analyse_dna_seq(lst_s,cromossome7)
+
