@@ -42,12 +42,21 @@ def is_palindrome(seq):
 def reverse_string(s):
 	return s[::-1]
 
+def substring_palindrome(l, crom):
+	substr = []
+	for line in crom:
+		for i in range(0,len(line) - l):
+			substr += line[i:i+l]
+	return substr
+
 cromossome7 = init_file("sequence.fasta")
 #questao a:
 #locate_diabetes(cromossome7,"CAGGAGATCTTCGTGGCCAC")
 #questao b:
 #print(is_palindrome("GC"))
 #print(is_palindrome("ATATG"))
+b = substring_palindrome(8,cromossome7)
+print(b)
 #questao d:
 #qt_nuc = calculate_nucleotids(cromossome7)
 #print(qt_nuc)
