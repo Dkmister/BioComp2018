@@ -122,4 +122,4 @@ def main():
 		print("\n")
 		i += 1
 
-main()
+
