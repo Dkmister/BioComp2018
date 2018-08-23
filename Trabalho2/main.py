@@ -74,10 +74,11 @@ def finalize(a1,a2):
 		if a1[i] == a2[i]:
 			symbol = symbol+a1[1]
 			identity += 1
+			score += match_score(a1[i],a2[i])
 		elif a1[i] != a2[i] and a1!="-" and a2!="-":
 			score+=match_score(a1[i],a2[i])
 			symbol+=' '
-			score+=gap_penalty
+			found = 0
 		elif a1[i] == 	"-" or a2[i] == "-":
 			symbol+=' '
 			score+=gap_penalty
