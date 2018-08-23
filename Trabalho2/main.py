@@ -28,11 +28,75 @@ def match_score(alpha,beta):
 	else:
 		return mismatch_penalty
 
+def traceback(s1,s2,score):
+	align1,align2 = '',''
+	i,j = len(s1),len(s2)
+	while i>0 and j>0:
+		score_current = score[i][j]
+		score_diagonal = score[i-1][j-1]
+		score_up = score[i][j-1]
+		score_left = score[i-1][j]
+		if score_current == score_diagonal + match_score(s1[i-1],s2[j-1]):
+			align1 += s1[i-1]
+			align2 += s2[j-1]
+			i -= 1
+			j -= 1
+		elif score_current == score_left + gap_penalty:
+			align1 += s1[i-1]
+			align2 += "-"
+			i -= 1
+		elif score_current == score_up + gap_penalty:
+			align1 += "-"
+			align2 += s2[j-1]
+			j -= 1
+
+	while i>0:
+		align1 += s1[i-1]
+		align2 += "-"
+		i -= 1
+	while j>0:
+		align1 += '-'
+		align2 += s2[j-1]
+		j -= 1
+	finalize(align1,align2)
+
+def finalize(a1,a2):
+	a1 = a1[::-1]
+	a2 = a2[::-1]
+
+	i,j = 0,0
+
+	symbol=''
+	found = 0
+	score = 0
+	identity = 0
+	for i in range(0,len(a1)):
+		if a1[i] == a2[i]:
+			symbol = symbol+a1[1]
+			identity += 1
+		elif a1[i] != a2[i] and a1!="-" and a2!="-":
+			score+=match_score(a1[i],a2[i])
+			symbol+=' '
+			score+=gap_penalty
+		elif a1[i] == 	"-" or a2[i] == "-":
+			symbol+=' '
+			score+=gap_penalty
+	identity = float(identity)/len(a1) * 100
+
+	print("Identity = %f percent" % identity)
+	print("Score = " +str(score))
+	print (a1)
+	print (symbol)
+	print (a2)
+
+
 def needle(seq1,seq2):
 	score = init_matrix(seq1,seq2)
-	
+	traceback(seq1,seq2,score)
 
 def main():
+	i = 0
+	lst_animals =["deer","pig","wolf","chicken","cow","trout","horse"]
 	score = []
 	human = init_file("human.fasta")
 	deer = init_file("deer.fasta")
@@ -52,7 +116,10 @@ def main():
 	human = ''.join(human)
 
 	del lst_comparisons
-	
-	#needle(human,lst_comp[0])
+	for animal in lst_comp:
+		needle(human,animal)
+		print(lst_animals[i])
+		print("\n")
+		i += 1
 
 main()
