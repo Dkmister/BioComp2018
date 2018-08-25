@@ -105,6 +105,16 @@ def water(s1,s2):
 	finalize(align1,align2)
 
 def main():
-	water("MEKVPGEMEIERRERSEELSEAERKAVQAMWARL","MFLVKGSVVQAFVLLSIVCLETTDDGVRQYVNANLTD")
+	cyto = init_file("cyto.fasta")
+	glab = init_file("glab.fasta")
+	
+	new_cyto =""
+	new_glab =""
+	for line in glab:
+		new_glab+=line
+	for line in cyto:
+		new_cyto+=line
+	
+	water(new_glab,new_cyto)
 
-main()
+
