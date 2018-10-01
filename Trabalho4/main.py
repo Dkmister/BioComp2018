@@ -1,3 +1,5 @@
+from Bio import Phylo
+from io import StringIO
 def lowest_cell(table):
 	min_cell = float("inf")
 	x , y = -1, -1 
@@ -58,4 +60,13 @@ M = [
 	[0.113,0.192,0.094],
 	[0.215,0.211,0.205,0.214]]
 	
-print(UPGMA(M,M_labels))
+u = (UPGMA(M,M_labels))
+u = u.replace("A","Gorila")
+u = u.replace("B","Oragontango")
+u = u.replace("C","Humano")
+u = u.replace("D","Chimpanze")
+u = u.replace("E","Gibao")
+handle = StringIO(u)
+tree = Phylo.read(handle,"newick")
+tree.ladderize()
+print(tree)
