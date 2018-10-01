@@ -17,7 +17,7 @@ def join_labels(labels,a,b):
 		
 	labels[a] = "(" + labels[a] + "," + labels[b] + ")"
 	
-	del lavels[b]
+	del labels[b]
 	
 def join_table(table,a,b):
 	if b<a:
@@ -36,3 +36,26 @@ def join_table(table,a,b):
 		del table[i][b]
 		
 	del table[b]
+
+def UPGMA(table,labels):
+	while len(labels) > 1:
+		x,y = lowest_cell(table)
+		join_table(table,x,y)
+		join_labels(labels,x,y)
+	return labels[0]
+	
+def alpha_labels(start,end):
+	labels = []
+	for i in range(ord(start), ord(end)+1):
+		labels.append(chr(i))
+	return labels
+	
+M_labels = alpha_labels("A","E")
+M = [
+	[],
+	[0.189],
+	[0.110,0.179],
+	[0.113,0.192,0.094],
+	[0.215,0.211,0.205,0.214]]
+	
+print(UPGMA(M,M_labels))
