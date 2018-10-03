@@ -68,5 +68,5 @@ u = u.replace("D","Chimpanze")
 u = u.replace("E","Gibao")
 handle = StringIO(u)
 tree = Phylo.read(handle,"newick")
-tree.ladderize()
-print(tree)
+
+Phylo.draw(tree)
