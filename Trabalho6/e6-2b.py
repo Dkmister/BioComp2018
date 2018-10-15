@@ -4,7 +4,7 @@ Copyright (c) 2017 Theodoro L. Mota
 """
 
 from random import randint, random, shuffle
-from math import sin, sqrt
+from math import sin, sqrt, exp
 from scipy.integrate import quad
 from operator import add
 from functools import reduce
@@ -104,7 +104,7 @@ def calculate_fitness(individual):
 	x = xx[0]
 	y = xx[1]
 
-	ans = -200*EULER**(-0.2*(sqrt(x**2+y**2)))
+	ans = -200*(exp(-0.2*(sqrt(x**2+y**2))))
 	return ans
 
 
