@@ -1,0 +1,60 @@
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.15478181838989258
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.1334824562072754
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13549041748046875
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13557887077331543
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13321733474731445
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.1338944435119629
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13699793815612793
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13821077346801758
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13244032859802246
+The function (x + y**2 - 7)**2 + (x**2 + y - 11)**2 converges to a minimum
+Number of iterations: 41
+theta (x0) = 2.99999889063093
+theta1 (y0) = 2.00000267824649
+f(x) = 1.08053814251933e-10
+0.13941335678100586
