@@ -1,6 +1,5 @@
 import numpy as np
-#
-#
+
 def freq_dict_of_arrays_v2(dna_list):
 	n = max([len(dna) for dna in dna_list])
 	frequency_matrix = {base:np.zeros(n,dtype=np.int)
@@ -30,9 +29,15 @@ def consensus_string(frequency_matrix):
 				
 		consensus += max_freq_base
 	return consensus
+	
+#----Receive a string, returns a list of all substring of size n
+#_______________________________________________________________
+def create_size_n_substrings(str,n):
+	lst_n_substrings = []
+	for i in range(len(str) - n):
+		lst_n_substrings.append(str[i:i+n])
+	return lst_n_substrings
 
-l = ['ATA','GTA','CAG','AAA']
-p = freq_dict_of_arrays_v2(l)
-print (p)
-c = consensus_string(p)
-print(c)
+
+
+lst_sqc = ["cctgatagacgctatctggctatccacgtacataggtcctctgtgcgaatctatgcgtttccaaccat","aaaagtccgtgcaccctctttcttcgtggctctggccaacgagggctgatgtataagacgaaaatttt",]
