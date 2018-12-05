@@ -1,6 +1,6 @@
 import numpy as np
 
-def freq_dict_of_arrays_v2(dna_list):
+def freq_dict_of_arrays(dna_list):
 	n = max([len(dna) for dna in dna_list])
 	frequency_matrix = {base:np.zeros(n,dtype=np.int)
 						for base in 'ACGT'}
@@ -51,4 +51,26 @@ for s in lst_sqc:
 	sub8.append(create_size_n_substrings(s,8))
 	
 
+f3 = []
+f5 = []
+f8 = []
 
+for l in sub3:
+	for s in l:
+		f3.append(s.upper())
+for l in sub5:
+	for s in l:
+		f5.append(s.upper())
+for l in sub8:
+	for s in l:
+		f8.append(s.upper())
+		
+fr3 = freq_dict_of_arrays(f3)
+c3 = consensus_string(fr3)
+fr5 = freq_dict_of_arrays(f5)
+c5 = consensus_string(fr5)
+fr8 = freq_dict_of_arrays(f8)
+c8 = consensus_string(fr8)
+
+print(c3,c5,c8)
+print(fr3,fr5,fr8)
