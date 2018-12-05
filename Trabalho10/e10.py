@@ -22,10 +22,10 @@ def consensus_string(frequency_matrix):
 		max_freq_base = None
 		
 		for base in 'ATCG':
-			if frequency_matrix[base2index[base]][i] > max_freq:
-				max_freq = frequency_matrix[base2index[base]][i]
+			if frequency_matrix[base][i] > max_freq:
+				max_freq = frequency_matrix[base][i]
 				max_freq_base = base
-			elif frequency_matrix[base2index[base]][i] == max_freq:
+			elif frequency_matrix[base][i] == max_freq:
 				max_freq_base = '-'
 				
 		consensus += max_freq_base
