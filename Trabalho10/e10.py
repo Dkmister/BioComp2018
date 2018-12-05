@@ -40,4 +40,15 @@ def create_size_n_substrings(str,n):
 
 
 
-lst_sqc = ["cctgatagacgctatctggctatccacgtacataggtcctctgtgcgaatctatgcgtttccaaccat","aaaagtccgtgcaccctctttcttcgtggctctggccaacgagggctgatgtataagacgaaaatttt",]
+lst_sqc = ["cctgatagacgctatctggctatccacgtacataggtcctctgtgcgaatctatgcgtttccaaccat","agtactggtgtacatttgatacgtacgtacaccggcaacctgaaacaaacgctcagaaccagaagtgc","aaaagtccgtgcaccctctttcttcgtggctctggccaacgagggctgatgtataagacgaaaatttt", "agcctccgatgtaagtcatagctgtaactattacctgccacccctattacatcttacgtacgtataca","ctgttatacaacgcgtcatggcggggtatgcgttttggtcgtcgtacgctcgatcgttaacgtaggtc"]
+
+sub3 = []
+sub5 = []
+sub8 = []
+for s in lst_sqc:
+	sub3.append(create_size_n_substrings(s,3))
+	sub5.append(create_size_n_substrings(s,5))
+	sub8.append(create_size_n_substrings(s,8))
+	
+
+

@@ -1,0 +1,27 @@
+import numpy as np
+def freq_lists(dna_list):
+	n = len(dna_list[0])
+	A = [0] * n
+	T = [0] * n
+	G = [0] * n
+	C = [0] * n
+	for dna in dna_list:
+		for i,base in enumerate(dna):
+			if base == 'A':
+				A[i]+=1
+			elif base == 'G':
+				G[i]+=1
+			elif base == 'T':
+				T[i]+=1
+			elif base == 'C':
+				C[i]+=1
+	return A,T,G,C
+
+
+def freq_dict_of_arrays_v2(dna_list):
+	
+l = ["TAT","GAG"]
+
+p = freq_dict_of_arrays_v2(l)
+
+print(p)
